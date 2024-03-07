@@ -2,13 +2,13 @@
   <div>
     <Header />
     <div class="container-fluid">
-      <Home/>
+      <router-view/>
     </div>
   </div>
 </template>
 
 <script>
-import Home from "./views/Home.vue";
+import Home from "@/views/Home";
 import Header from "./components/layouts/Header.vue";
 import Nav from "./components/layouts/Nav.vue";
 
