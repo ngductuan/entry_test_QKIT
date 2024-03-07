@@ -1,0 +1,77 @@
+.video-card-sec {
+  padding-top: 16px;
+
+  .thumb-nail {
+    width: 100%;
+    // height: 175px;
+    cursor: pointer;
+    border-radius: 12px;
+    object-fit: cover;
+
+    &:hover {
+      border-radius: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+  .video-store{
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  iframe{
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .content {
+    padding-top: 12px;
+    padding-right: 24px;
+    .channel-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    .info {
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 6px;
+      }
+
+      .channel-name {
+        color: rgba($color: #5f5b5b, $alpha: 1);
+        font-size: 14px;
+      }
+
+      .views-date {
+        color: rgba($color: #5f5b5b, $alpha: 1);
+
+        .dot {
+          height: 4px;
+          width: 4px;
+          background-color: rgba($color: #5f5b5b, $alpha: 1);
+          border-radius: 50%;
+          align-self: center;
+          margin-left: 6px;
+          margin-right: 4px;
+        }
+
+        .date {
+          list-style-type: circle;
+          list-style-position: inside;
+        }
+      }
+    }
+  }
+
+  .d-none {
+    display: none;
+    transition: all ease-in-out 0.3s;
+    border-radius: 0;
+  }
+}
