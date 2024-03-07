@@ -1,6 +1,6 @@
 <template>
   <div class="video-card-sec col-3">
-    <div :id="id" class="video-store">
+    <div :id="id" class="video-store" @mouseleave="mouseLeave">
       <!-- <img
         :src="'https://img.youtube.com/vi/' + id + '/0.jpg'"
         class="thumb-nail"
@@ -139,18 +139,18 @@ export default {
       iframe.allow =
         "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
-      iframe.setAttribute("id", `iframe-${props.id}`);
+      // iframe.setAttribute("id", `iframe-${props.id}`);
       return iframe;
     }
 
     function mouseOver() {
       $(`#${props.id} .thumb-nail`).addClass("d-none");
       $(`#${props.id}`).append(createIframe());
-      setInterval(() => {
-        console.log($("#movie_player"));
-        $("#movie_player").removeClass("paused-mode unstarted-mode");
-        $("#movie_player").addClass("playing-mode ytp-autohide");
-      }, 1000);
+      // setInterval(() => {
+      //   console.log($("#movie_player"));
+      //   $("#movie_player").removeClass("paused-mode unstarted-mode");
+      //   $("#movie_player").addClass("playing-mode ytp-autohide");
+      // }, 1000);
       // startVideo();
       // player.playVideo();
     }
