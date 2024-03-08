@@ -1,7 +1,7 @@
 <template>
   <div class="header-sec d-flex justify-content-between align-content-center">
     <div class="icons-div d-flex align-items-center">
-      <div class="nav-btn d-flex align-items-center">
+      <div class="nav-btn d-flex align-items-center" @click="navClick">
         <i class="fa-light fa-bars"></i>
       </div>
       <a class="main-icon" href="/">
@@ -92,6 +92,16 @@
 <script>
 export default {
   name: "Header",
+  setup(props, {emit}){
+
+    function navClick(){
+      emit('nav-click')
+    }
+
+    return{
+      navClick,
+    }
+  }
 };
 </script>
 

@@ -1,23 +1,15 @@
 .video-card-sec {
-  padding-top: 16px;
+
+  &:not(:first-child){
+    padding-top: 12px;
+  }
 
   .video-store{
     position: relative;
     display: block;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
-    width: 100%;
-    height: 175px;
-
-    .cover.show{
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: transparent;
-      z-index: 99;
-    }
+    height: 90px;
 
     .video-iframe{
       cursor: pointer;
@@ -27,36 +19,21 @@
 
     .thumb-nail {
       width: 100%;
-      height: 175px;
+      height: 90px;
       cursor: pointer;
       border-radius: 12px;
       object-fit: cover;
       transition: opacity 0.3s ease-in-out;
-  
-      &:hover {
-        border-radius: 0;
-        transition: opacity 0.3s ease-in-out;
-      }
     }
-  }
-
-  iframe{
-    transition: opacity 0.3s ease-in-out;
   }
 
   .content {
-    padding-top: 12px;
     padding-right: 24px;
-    .channel-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      margin-right: 12px;
-    }
-
+    cursor: pointer;
+    
     .info {
       .title {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 700;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -67,11 +44,12 @@
 
       .channel-name {
         color: rgba($color: #5f5b5b, $alpha: 1);
-        font-size: 14px;
+        font-size: 12px;
       }
 
       .views-date {
         color: rgba($color: #5f5b5b, $alpha: 1);
+        font-size: 12px;
 
         .dot {
           height: 3px;

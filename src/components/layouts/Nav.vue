@@ -1,8 +1,8 @@
 <template>
-  <div class="nav-sec scroll-bar-custom-2">
+  <div class="nav-sec scroll-bar-custom-2" :class="{'nav-change-sec': navBool}">
     <!-- Home -->
-    <div class="tab-sec">
-      <a class="tab-card active-tab" href="/">
+    <div class="tab-sec" :class="{'tab-sec-change': navBool}">
+      <a class="tab-card active-tab" :class="{'nav-change-state': navBool}" href="/">
         <div class="icon" style="fill: currentcolor">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@
         </div>
         <span>Home</span>
       </a>
-      <a class="tab-card" href="/">
+      <a class="tab-card" :class="{'nav-change-state': navBool}" href="/">
         <div class="icon" style="fill: currentcolor">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@
         </div>
         <span>Shorts</span>
       </a>
-      <a class="tab-card" href="/">
+      <a class="tab-card" :class="{'nav-change-state': navBool}" href="/">
         <div class="icon" style="fill: currentcolor">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +71,8 @@
     </div>
 
     <!-- You, History -->
-    <div class="tab-sec">
-      <a class="tab-card" href="/">
+    <div class="tab-sec" :class="{'tab-sec-change': navBool}">
+      <a class="tab-card" :class="{'nav-change-state': navBool}" href="/">
         <div class="icon" style="fill: currentcolor">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@
         </div>
         <span>You</span>
       </a>
-      <a class="tab-card" href="/">
+      <a class="tab-card" :class="{'nav-change-state': navBool}" href="/">
         <div class="icon" style="fill: currentcolor">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@
     </div>
 
     <!-- Sign in -->
-    <div class="tab-sec" style="padding: 16px 32px">
+    <div class="tab-sec" :class="{'d-none': navBool}" style="padding: 16px 32px">
       <p>Sign in to like videos, comment, and subscribe.</p>
       <a class="sign-in-btn d-flex align-items-center" href="#">
         <i class="fa-light fa-circle-user"></i>
@@ -131,7 +131,7 @@
     </div>
 
     <!-- Explore -->
-    <div class="tab-sec">
+    <div class="tab-sec" :class="{'d-none': navBool}">
       <span class="title">Explore</span>
       <a class="tab-card" href="/">
         <div class="icon" style="fill: currentcolor">
@@ -250,7 +250,7 @@
     </div>
 
     <!-- Browse channels -->
-    <div class="tab-sec">
+    <div class="tab-sec" :class="{'d-none': navBool}">
       <a class="tab-card" href="/">
         <div class="icon" style="fill: currentcolor">
           <svg
@@ -276,7 +276,7 @@
     </div>
 
     <!-- Move from Youtube -->
-    <div class="tab-sec">
+    <div class="tab-sec" :class="{'d-none': navBool}">
       <span class="title">Move from Youtube</span>
       <a class="tab-card" href="/">
         <div class="icon" style="fill: currentcolor">
@@ -408,7 +408,7 @@
     </div>
 
     <!-- Settings -->
-    <div class="tab-sec">
+    <div class="tab-sec" :class="{'d-none': navBool}">
       <a class="tab-card" href="/">
         <div class="icon" style="fill: currentcolor">
           <svg
@@ -503,7 +503,7 @@
       </a>
     </div>
 
-    <div class="tab-sec" style="padding: 0px">
+    <div class="tab-sec" :class="{'d-none': navBool}" style="padding: 0px">
       <div class="footer-nav" style="padding: 16px 24px 0">
         <a href="https://www.youtube.com/about/">About</a>
         <a href="https://www.youtube.com/about/press/">Press</a>
@@ -522,27 +522,42 @@
         <a href="https://www.youtube.com/creators/">Test new features</a>
       </div>
 
-      <span class="copyright">© 2024 Google LLC</span>
+      <span class="copyright">© 2024 Google LLC </span>
     </div>
   </div>
 </template>
 
 <script>
+import { inject, ref, watchEffect } from "vue";
+
 export default {
   name: "Nav",
   setup() {
+    let navBool = inject("navClick");
+
+    watchEffect(() => {
+      console.log('nav click', navBool.value)
+    })
+
     $(document).ready(function () {
       $(".nav-sec").hover(
         function () {
           // Mouse enter event
-          $(this).addClass("active-bar")
+          $(this).addClass("active-bar");
+          if(navBool.value){
+
+          }
         },
         function () {
           // Mouse leave event
-          $(this).removeClass("active-bar")
+          $(this).removeClass("active-bar");
         }
       );
     });
+
+    return{
+      navBool,
+    }
   },
 };
 </script>

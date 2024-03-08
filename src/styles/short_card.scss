@@ -1,4 +1,4 @@
-.video-card-sec {
+.short-card-sec {
   padding-top: 16px;
 
   .video-store{
@@ -7,7 +7,7 @@
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
     width: 100%;
-    height: 175px;
+    height: 360px;
 
     .cover.show{
       position: absolute;
@@ -22,12 +22,15 @@
     .video-iframe{
       cursor: pointer;
       object-fit: cover;
+      width: 200px;
+      
+      height: 360px;
       // pointer-events: none;
     }
 
     .thumb-nail {
       width: 100%;
-      height: 175px;
+      height: 360px;
       cursor: pointer;
       border-radius: 12px;
       object-fit: cover;

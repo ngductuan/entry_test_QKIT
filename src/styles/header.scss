@@ -9,8 +9,14 @@
   .icons-div {
     .nav-btn {
       font-size: 20px;
-      padding: 8px;
+      padding: 9px 11px; 
+      cursor: pointer;
       margin-top: 2px;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: rgba($color: #c0bdbd, $alpha: 0.4);
+      }
     }
 
     .main-icon {
@@ -77,6 +83,11 @@
       border-top: 1px solid;
       border-right: 1px solid;
       border-color: var(--border-color);
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($color: #c0bdbd, $alpha: 0.4);
+      }
     }
 
     .audio-btn{
@@ -89,6 +100,11 @@
       align-items: center;
       justify-content: center;
       margin-left: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($color: #c0bdbd, $alpha: 0.4);
+      }
     }
   }
 
@@ -100,6 +116,7 @@
       font-size: 20px;
       padding: 8px;
       text-align: center;
+      cursor: pointer;
     }
 
     .sign-in-btn{
@@ -118,6 +135,10 @@
       span{
         font-weight: 550;
         font-size: 14px;
+      }
+
+      &:hover{
+        background-color: rgba($color: #105ec5, $alpha: 0.2);
       }
     }
   }

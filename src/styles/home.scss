@@ -32,7 +32,13 @@
           border-radius: 8px;
           font-weight: 600;
           cursor: pointer;
+
+          &:not(.active-li):hover {
+            background-color: rgba($color: #c0bdbd, $alpha: 0.4);
+          }
         }
+
+        
 
         li:first-child{
           margin-left: 2%;
@@ -73,5 +79,19 @@
 
 .c-11-custom {
   flex: 0 0 85%;
-  max-width: 85%;
+  // max-width: 85%;
+}
+
+.video-sec-change{
+  margin-left: 4.7% !important;
+}
+
+.topic-sec-cover-change{
+  margin-left: 3.3% !important;
+  ul{
+    padding-right: 4.0% !important;
+    li:first-child{
+      margin-left: 1.8% !important;
+    }
+  }
 }

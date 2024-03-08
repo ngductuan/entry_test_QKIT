@@ -1,19 +1,49 @@
 <template>
   <div class="video-details-main-sec">
     <div class="video-main">
-      <iframe :src="`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&showinfo=0&ecver=2&modestbranding=1`"></iframe>
+      <iframe
+        :src="`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&showinfo=0&ecver=2&modestbranding=1`"
+      ></iframe>
     </div>
-    <div class="content d-flex">
-      <img src="../../assets/thumbnail.jpg" class="channel-icon" alt="" />
-      <div class="info">
-        <h4 class="title">
-          SAU LỜI KHƯỚC TỪ - PHAN MẠNH QUỲNH | OFFICIAL MV (OST MAI MOVIE)
-        </h4>
-        <span class="channel-name">TRẤN THÀNH TOWN</span>
-        <div class="views-date d-flex">
-          <span class="views">4.4M views</span>
-          <span class="dot"></span>
-          <span class="date">12 days ago</span>
+    <div class="content">
+      <h4 class="title mb-2 mt-3">Taylor Swift - Enchanted (Music Video)</h4>
+      <div class="row controls-sec">
+        <div class="col-4 info d-flex align-items-center">
+          <img src="../../assets/thumbnail.jpg" class="channel-icon" alt="" />
+          <div class="name-viewer">
+            <span class="channel-name d-block">Taylor Music</span>
+            <span class="viewer d-block">4.4M views</span>
+          </div>
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+
+        <div class="col-8 feature-sec d-flex justify-content-end">
+          <div class="like-btn d-flex align-items-center">
+            <img src="../../assets/like.png" alt="" />
+            <span>9.7K</span>
+            <div class="bar"></div>
+          </div>
+          <div class="unlike-btn d-flex align-items-center me-2">
+            <img src="../../assets/unlike.png" alt="" />
+          </div>
+          <div class="common-btn d-flex align-items-center me-2">
+            <img src="../../assets/share.png" alt="" />
+            <span>Share</span>
+          </div>
+
+          <div class="common-btn d-flex align-items-center me-2">
+            <img src="../../assets/download.png" alt="" />
+            <span>Download</span>
+          </div>
+
+          <div class="common-btn d-flex align-items-center me-2">
+            <img src="../../assets/add_playlist.png" alt="" />
+            <span>Save</span>
+          </div>
+
+          <div class="extra-btn">
+            <i class="fa-light fa-ellipsis"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -30,8 +60,7 @@ export default {
   setup(props) {
     const router = useRouter();
 
-    return {
-    };
+    return {};
   },
 };
 </script>

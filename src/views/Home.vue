@@ -3,7 +3,7 @@
     <Nav />
     <!-- <div class="col col-2"></div> -->
     <div class="content-sec">
-      <div class="col-12 topic-sec-cover d-flex">
+      <div class="col-12 topic-sec-cover d-flex" :class="{'topic-sec-cover-change': navBool}">
         <!-- <div class="col-1-custom"></div> -->
         <ul class="topic-sec-ul scroll-bar-custom-3">
           <!-- <li style="width: 15%;"></li> -->
@@ -26,25 +26,32 @@
           <li>Jazz</li>
         </ul>
       </div>
-      <div class="col c-11-custom row medium-gutters gx-3 video-sec">
-        <VideoCard v-for="(item, index) in arrId" :key="index" :id="item" />
+      <div class="col c-11-custom row medium-gutters gx-3 video-sec" :class="{'video-sec-change': navBool}">
+        <VideoCard v-for="id in 8" :key="id" :id="arrId[id]" />
         <!-- <VideoCard :id="'VY3xx4IqPs4'"/> -->
+        <!-- <ShortSec/> -->
       </div>
+      
     </div>
   </div>
 </template>
 
 <script>
+import { inject, ref, watchEffect } from "vue";
 import Nav from "../components/layouts/Nav.vue";
 import VideoCard from "../components/home/VideoCard.vue";
+import ShortSec from '@/components/home/ShortSec.vue';
 
 export default {
   name: "Home",
   components: {
     Nav,
     VideoCard,
+    ShortSec,
   },
   setup() {
+    let navBool = inject("navClick");
+
     let arrId = [
       "VY3xx4IqPs4",
       "6us_CHq4ySo",
@@ -60,8 +67,15 @@ export default {
       "8dcJ-U1dUx0",
     ];
 
+    watchEffect(() => {
+      console.log('nav click Home', navBool.value)
+    })
+
+
+
     return {
       arrId,
+      navBool,
     };
   },
 };
