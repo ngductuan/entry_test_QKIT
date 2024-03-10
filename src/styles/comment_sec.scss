@@ -16,6 +16,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
 
       img {
         width: 36px;
@@ -25,6 +26,20 @@
       span {
         font-size: 14px;
         font-weight: 600;
+      }
+
+      &:hover::after{
+        position: absolute;
+        content: "Sort comments";
+        background-color: var(--black-hover-span);
+        color: white;
+        font-size: 11px;
+        padding: 8px 6px 8px 6px;
+        width: 70px;
+        border-radius: 4px;
+        bottom: -180%;
+        right: 10%;
+        text-align: start;
       }
     }
   }
