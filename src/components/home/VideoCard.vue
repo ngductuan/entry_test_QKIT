@@ -7,12 +7,13 @@
         @mouseover="mouseOver"
         alt=""
       />
+      <span class="time-span">4:10</span>
       <div class="cover" @click="videoClick"></div>
     </a>
     <div class="content d-flex">
       <img src="../../assets/thumbnail.jpg" class="channel-icon" alt="" />
       <div class="info">
-        <h4 class="title">
+        <h4 class="title" @click="videoClick">
           SAU LỜI KHƯỚC TỪ - PHAN MẠNH QUỲNH | OFFICIAL MV (OST MAI MOVIE)
         </h4>
         <span class="channel-name">TRẤN THÀNH TOWN</span>
@@ -57,12 +58,14 @@ export default {
 
     function mouseOver() {
       $(`#${props.id} .thumb-nail`).addClass("d-none");
+      $(`#${props.id} .time-span`).addClass("d-none");
       $(`#${props.id} .cover`).addClass("show");
       $(`#${props.id}`).append(createIframe());
     }
 
     function mouseLeave() {
       $(`#${props.id} .thumb-nail`).removeClass("d-none");
+      $(`#${props.id} .time-span`).removeClass("d-none");
       $(`#${props.id} .cover`).removeClass("show");
       $(`#${props.id} iframe`).remove();
     }
@@ -71,8 +74,8 @@ export default {
       console.log("da click", vidId.value);
       // mouseLeave()
       router.push({
-        name: 'VideoDetails',
-        params: {id: vidId.value}
+        name: "VideoDetails",
+        params: { id: vidId.value },
       });
     }
 

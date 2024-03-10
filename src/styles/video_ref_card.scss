@@ -1,27 +1,70 @@
 .video-card-sec {
+  position: relative;
 
-  &:not(:first-child){
+  .more-icon{
+    position: absolute;
+    width: 4px;
+    right: 4%;
+    font-size: 16px;
+    font-weight: 600;
+    top: 0;
+  }
+
+  &:not(:first-child) {
     padding-top: 12px;
   }
 
-  .video-store{
+  .video-store {
     position: relative;
     display: block;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
-    height: 90px;
+    height: 94px;
 
-    .video-iframe{
+    .video-iframe {
       cursor: pointer;
       object-fit: cover;
       // pointer-events: none;
+    }
+
+    .clock-add-list {
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      display: flex;
+      flex-direction: column;
+      .clock,
+      .add-list {
+        padding: 0 4px;
+        font-size: 18px;
+        border-radius: 4px;
+        color: white;
+        background-color: black;
+        font-weight: 600;
+      }
+
+      .clock{
+        margin-bottom: 4px;
+      }
+    }
+
+    .time-span {
+      position: absolute;
+      padding: 0 4px;
+      font-size: 12px;
+      border-radius: 4px;
+      color: white;
+      background-color: black;
+      bottom: 4px;
+      right: 8px;
+      font-weight: 600;
     }
 
     .thumb-nail {
       width: 100%;
       height: 90px;
       cursor: pointer;
-      border-radius: 12px;
+      border-radius: 10px;
       object-fit: cover;
       transition: opacity 0.3s ease-in-out;
     }
@@ -30,7 +73,7 @@
   .content {
     padding-right: 24px;
     cursor: pointer;
-    
+
     .info {
       .title {
         font-size: 14px;

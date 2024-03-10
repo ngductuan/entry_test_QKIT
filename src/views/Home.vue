@@ -30,6 +30,7 @@
         <VideoCard v-for="id in 8" :key="id" :id="arrId[id]" />
         <!-- <VideoCard :id="'VY3xx4IqPs4'"/> -->
         <!-- <ShortSec/> -->
+        <VideoCard v-for="idValue in filteredIds()" :key="idValue" :id="idValue" />
       </div>
       
     </div>
@@ -65,17 +66,28 @@ export default {
       "xcl9CmYJn10",
       "juSMBJEr_bE",
       "8dcJ-U1dUx0",
+      "ru3U8MHbFFI",
+      "N5wpD9Ov_To",
+      "fzZTvLmmTzM",
+      "MxEtxo_AaZ4",
+      "Hu2DqgG1nOs",
+      "M1qPpwVcF64",
+      
     ];
 
     watchEffect(() => {
       console.log('nav click Home', navBool.value)
     })
 
+    let filteredIds = () => {
+      return arrId.filter((id, index) => index >= 8);
+    }
 
 
     return {
       arrId,
       navBool,
+      filteredIds,
     };
   },
 };

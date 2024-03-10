@@ -12,11 +12,12 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { inject, ref, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import VideoDetailsMain from "../components/VideoDetails/VideoDetailsMain.vue";
 import VideoRefCard from '@/components/VideoDetails/VideoRefCard.vue';
 import CommentSec from "@/components/VideoDetails/CommentSec.vue";
+import Nav from "@/components/layouts/Nav.vue";
 
 export default {
   name: 'VideoDetails',
@@ -24,11 +25,21 @@ export default {
     VideoDetailsMain,
     VideoRefCard,
     CommentSec,
+    Nav,
   },
   setup(){
     const route = useRoute();
     const vidId = route.params.id
-    // console.log(vidId);
+    let navBool = inject("navClick");
+
+    console.log(route.name);
+
+    watchEffect(() => {
+      console.log('nav click details', navBool.value)
+      if(navBool.value){
+
+      }
+    })
 
     let arrId = [
       "VY3xx4IqPs4",
@@ -48,6 +59,7 @@ export default {
     return{
       vidId,
       arrId,
+      navBool,
     }
   }
 }

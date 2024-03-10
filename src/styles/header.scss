@@ -42,32 +42,56 @@
   .search-div{
     .input-box{
       width: 535px;
-      position: relative;
       color: var(--grey-color);
-
-      .form-control{
-        height: 40px;
-        border-top-left-radius: 24px;
-        border-bottom-left-radius: 24px;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border: 1px solid;
-        border-color: var(--border-color);
-        font-size: 16px;
-        padding: 8px 16px;
-  
-        &:focus{
-          box-shadow: none;
-          border-color: var(--blue-color);
+      
+      .search-cover{
+        position: relative;
+        .before-search-btn{
+          position: absolute;
+          font-size: 15px;
+          padding: 8px 24px;
+          color: black;
+          text-align: center;
+          left: -1%;
+          top: 4%;
         }
 
-        &::placeholder{
-          color: var(--border-bold-color);
+        .form-control{
+          // padding-left: 54px !important; 
+          // margin-left: -54px;
+          width: 94%;
+          height: 40px;
+          border-top-left-radius: 24px;
+          border-bottom-left-radius: 24px;
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border: 1px solid;
+          border-color: var(--border-color);
+          font-size: 16px;
+          padding: 8px 16px;
+    
+          &:focus{
+            box-shadow: none;
+            border-color: var(--blue-color);
+          }
+  
+          &::placeholder{
+            color: var(--border-bold-color);
+          }
+        }
+  
+        .form-control-change{
+          padding-left: 9% !important;
+          width: 100% !important; 
+          // margin-left: -54px !important;
+          // margin-left: 0 !important;
         }
       }
+
     }
     
     .search-btn{
+      position: relative;
       height: 40px;
       font-size: 18px;
       width: 64px;
@@ -84,13 +108,27 @@
       border-right: 1px solid;
       border-color: var(--border-color);
       cursor: pointer;
+      
 
       &:hover {
         background-color: rgba($color: #c0bdbd, $alpha: 0.4);
       }
+
+      &:hover::after{
+        position: absolute;
+        content: "Search";
+        background-color: var(--black-hover-span);
+        color: white;
+        font-size: 11px;
+        padding: 8px 6px;
+        border-radius: 4px;
+        bottom: -120%;
+        right: 10%;
+      }
     }
 
     .audio-btn{
+      position: relative;
       border-radius: 24px;
       background-color: var(--grey-color);
       width: 40px;
@@ -105,18 +143,48 @@
       &:hover {
         background-color: rgba($color: #c0bdbd, $alpha: 0.4);
       }
+
+      &:hover::after{
+        position: absolute;
+        content: "Search width your voice";
+        background-color: var(--black-hover-span);
+        color: white;
+        font-size: 11px;
+        padding: 8px 6px;
+        border-radius: 4px;
+        bottom: -120%;
+        right: -120%;
+        width: 140px;
+      }
     }
   }
 
   .account-div{
     // width: 20px;
     .setting-btn{
+      position: relative;
       width: 40px;
       margin-right: 16px;
       font-size: 20px;
       padding: 8px;
       text-align: center;
       cursor: pointer;
+
+      &:hover{
+        // background-color: rgba($color: #c0bdbd, $alpha: 0.4);
+      }
+
+      &:hover::after{
+        position: absolute;
+        content: "Settings";
+        background-color: var(--black-hover-span);
+        color: white;
+        font-size: 11px;
+        padding: 8px 6px;
+        border-radius: 4px;
+        bottom: -80%;
+        right: -30%;
+      }
     }
 
     .sign-in-btn{

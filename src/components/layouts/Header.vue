@@ -65,8 +65,19 @@
     </div>
 
     <div class="search-div d-flex align-self-center">
-      <div class="input-box">
-        <input type="text" class="form-control" placeholder="Search" />
+      <div class="input-box d-flex">
+        <div class="search-cover w-100 d-flex justify-content-end">
+          <div class="before-search-btn d-none">
+            <i class="fa-light fa-magnifying-glass"></i>
+          </div>
+          <input
+            type="text"
+            class="form-control search-1"
+            @focus="handleFocus"
+            @blur="handleBlur"
+            placeholder="Search"
+          />
+        </div>
       </div>
       <div class="search-btn">
         <i class="fa-light fa-magnifying-glass"></i>
@@ -82,7 +93,7 @@
       </div>
 
       <a class="sign-in-btn d-flex align-items-center" href="#">
-        <i class="fa-light fa-circle-user "></i>
+        <i class="fa-light fa-circle-user"></i>
         <span>Sign in</span>
       </a>
     </div>
@@ -90,18 +101,44 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import { useRoute } from "vue-router";
+
 export default {
   name: "Header",
-  setup(props, {emit}){
+  setup(props, { emit }) {
+    const route = useRoute();
+    let focusSearch = ref(false);
 
-    function navClick(){
-      emit('nav-click')
+    console.log("route.name", route.name);
+
+    function navClick() {
+      if (route.name == "VideoDetails") {
+        emit("nav-click-2");
+      } else {
+        emit("nav-click");
+      }
     }
 
-    return{
+    function handleFocus() {
+      $(`.header-sec .before-search-btn`).removeClass("d-none");
+      $(`.header-sec .form-control`).addClass("form-control-change");
+      // focusSearch.value = true
+    }
+
+    function handleBlur() {
+      // focusSearch.value = false
+      $(`.header-sec .before-search-btn`).addClass("d-none");
+      $(`.header-sec .form-control`).removeClass("form-control-change");
+    }
+
+    return {
       navClick,
-    }
-  }
+      handleFocus,
+      handleBlur,
+      focusSearch,
+    };
+  },
 };
 </script>
 

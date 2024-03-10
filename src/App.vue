@@ -27,6 +27,10 @@ export default {
       navBool.value = !navBool.value
     }
 
+    let navClick2 = () => {
+      navBool.value = !navBool.value
+    }
+
     provide('navClick', navBool);
 
     return {

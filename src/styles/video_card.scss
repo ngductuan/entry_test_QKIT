@@ -1,7 +1,8 @@
 .video-card-sec {
-  padding-top: 16px;
+  // padding-top: 16px;
+  margin-top: 56px;
 
-  .video-store{
+  .video-store {
     position: relative;
     display: block;
     cursor: pointer;
@@ -9,7 +10,19 @@
     width: 100%;
     height: 175px;
 
-    .cover.show{
+    .time-span {
+      position: absolute;
+      padding: 0 4px;
+      font-size: 12px;
+      border-radius: 4px;
+      color: white;
+      background-color: black;
+      bottom: 5.5px;
+      right: 4.5px;
+      font-weight: 600;
+    }
+
+    .cover.show {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -17,9 +30,10 @@
       right: 0;
       background-color: transparent;
       z-index: 99;
+      cursor: pointer;
     }
 
-    .video-iframe{
+    .video-iframe {
       cursor: pointer;
       object-fit: cover;
       // pointer-events: none;
@@ -32,15 +46,16 @@
       border-radius: 12px;
       object-fit: cover;
       transition: opacity 0.3s ease-in-out;
-  
+
       &:hover {
         border-radius: 0;
         transition: opacity 0.3s ease-in-out;
       }
     }
+    
   }
 
-  iframe{
+  iframe {
     transition: opacity 0.3s ease-in-out;
   }
 
@@ -62,12 +77,14 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
+        cursor: pointer;
       }
 
       .channel-name {
         color: rgba($color: #5f5b5b, $alpha: 1);
         font-size: 14px;
+        cursor: pointer;
       }
 
       .views-date {
